@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Mis Tareas{% endblock %}
+
+{% block content %}
+<div class="contenedor">
+    <h2>Lista de Tareas</h2>
+
+    <a href="{{ url_for('tarea.agregar_tarea') }}">+ Agregar tarea</a>
+    <br><br>
+
+    {% for tarea in tareas %}
+    <div class="tarea">
+        <strong>{{ tarea.titulo|capitalize }}</strong>
+        {% if tarea.estado %}✅{% else %}⚠️{% endif %}
+        <p>{{ tarea.descripcion|default("Sin descripción") }}</p>
+        <a href="{{ url_for('tarea.editar_tarea', id=tarea.id) }}">Editar</a>
+        <form class="form_eliminar" action="{{ url_for('tarea.eliminar_tarea', id=tarea.id) }}" method="POST">
+            <button type="submit">Eliminar</button>
+        </form>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

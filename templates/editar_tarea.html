@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Editar Tarea{% endblock %}
+
+{% block content %}
+<h2>Editar Tarea</h2>
+<form method="POST">
+    <label>Título:</label><br>
+    <input type="text" name="titulo" value="{{ tarea.titulo }}" required>
+
+    <label>Descripción:</label><br>
+    <textarea name="descripcion">{{ tarea.descripcion }}</textarea>
+
+    <div class="checkbox-estado">
+    <span>Estado:</span>
+    <input type="checkbox" name="estado" value="1" {% if tarea.estado %}checked{% endif %}>
+    </div>
+
+    <button type="submit">Actualizar Tarea</button>
+</form>
+{% endblock %}

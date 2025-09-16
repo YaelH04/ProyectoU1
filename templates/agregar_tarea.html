@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Agregar Tarea{% endblock %}
+
+{% block content %}
+<h2>Agregar Nueva Tarea</h2>
+<form method="POST">
+    <label>Título:</label><br>
+    <input type="text" name="titulo" required><br>
+
+    <label>Descripción:</label><br>
+    <textarea name="descripcion"></textarea><br>
+
+    <div class="checkbox-estado">
+    <span>Estado:</span>
+    <input type="checkbox" name="estado" value="0">
+    </div>
+
+    <button type="submit">Agregar Tarea</button>
+</form>
+{% endblock %}

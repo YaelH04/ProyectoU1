@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Registro{% endblock %}
+
+{% block content %}
+<h2>Registro de Usuario</h2>
+<form method="POST" onsubmit="return ValidaFormularioRegistro()">
+    <label>Nombre de usuario:</label><br>
+    <input type="text" name="nombre_usuario" id="txt_usuario"><br>
+
+    <label>Correo:</label><br>
+    <input type="email" name="correo" id="txt_correo"><br>
+
+    <label>Contraseña:</label><br>
+    <input type="password" name="contraseña" id="txt_password"><br>
+
+    <label>Confirmar contraseña:</label><br>
+    <input type="password" name="confirmar_contraseña" id="txt_conf_password"><br>
+
+    <button type="submit">Registrar</button>
+</form>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<h2>Iniciar Sesión</h2>
+<form method="POST" onsubmit="return ValidaFormularioLogin()">
+    <label>Correo:</label><br>
+    <input type="email" name="correo" id="txt_correo">
+    <label>Contraseña:</label><br>
+    <input type="password" name="contraseña" id="txt_password">
+    <button type="submit">Ingresar</button>
+</form>
+{% endblock %}
