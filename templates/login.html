@@ -2,6 +2,13 @@
 {% block title %}Login{% endblock %}
 
 {% block content %}
+<div class="container_bienvenida">
+    <h1>Bienvenido!</h1>
+    <p class="txt_bienvenida">
+        En esta app puedes organizar, guardar, editar y eliminar tareas,
+        además de que puedes ponerlas como pendientes o como completadas.
+    </p>
+</div>
 <h2>Iniciar Sesión</h2>
 <form method="POST" onsubmit="return ValidaFormularioLogin()">
     <label>Correo:</label><br>
@@ -10,4 +17,33 @@
     <input type="password" name="contraseña" id="txt_password">
     <button type="submit">Ingresar</button>
 </form>
+
+<hr>
+<div class="contenedor_usuarios">
+    <h3 style="text-align: center;">Usuarios Registrados</h3>
+    <table style="border-collapse: collapse; margin: 0 auto; width: 30%; background: #fff; box-shadow: 0 0 5px rgba(0,0,0,0.1);">
+        <thead>
+            <tr style="background-color: #f2f2f2;">
+                <th style="border: 1px solid #ddd; padding: 8px; text-align: center; background-color: #333; color: #fff;">
+                    Usuario
+                </th>
+                <th style="border: 1px solid #ddd; padding: 8px; text-align: center; background-color: #333; color: #fff;">
+                    Correo
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in usuarios %}
+            <tr>
+                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                    {{ user.nombre_usuario }}
+                </td>
+                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                    {{ user.correo }}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
 {% endblock %}

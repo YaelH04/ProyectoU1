@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>{% block title %}Lista Tareas{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
 </head>
 <body>
     <nav>
@@ -21,7 +20,7 @@
     <!-- Flash messages con categorías -->
     {% with mensajes = get_flashed_messages(with_categories=true) %}
       {% if mensajes %}
-        <div class="flash-messages">
+        <div id="flash-container" class="flash-messages">
           {% for category, mensaje in mensajes %}
             <div class="flash flash-{{ category }}">{{ mensaje }}</div>
           {% endfor %}
@@ -30,5 +29,7 @@
     {% endwith %}
 
     {% block content %}{% endblock %}
+
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
 </body>
 </html>

@@ -9,13 +9,32 @@ body {
     padding: 0;
 }
 
+.container_bienvenida {
+    background-color: #333;
+    width: 100%;
+    color: #fff;
+}
+
+.container_bienvenida h1 {
+    color: #fff;
+    text-align: center;
+    padding: 8px;
+}
+
+.txt_bienvenida {
+    color: #fff;
+    text-align: center;
+    padding: 8px;
+}
+
 .contenedor {
     background-color: #71d1e2;
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 h2 {

@@ -32,7 +32,7 @@ def registro():
 
         # Validar contraseña
         if contraseña != confirmar:
-            flash("Las contraseñas no coinciden", "error")
+            flash("⚠️yLas contraseñas no coinciden. Vuelve a intentarlo", "error")
             return redirect(url_for("usuario.registro"))
 
         # Crear un nuevo usuario
@@ -63,7 +63,11 @@ def login():
             return redirect(url_for("tarea.lista_tareas"))
         else:
             flash("⚠️Credenciales inválidas", "error")
-    return render_template("login.html")
+
+    usuarios = Usuario.query.all()
+
+    return render_template("login.html", usuarios=usuarios)
+
 
 # Ruta para el perfil del usuario
 @usuario_bp.route("/perfil/<int:id>", methods=["GET", "POST"])
@@ -90,7 +94,7 @@ def perfil(id):
     form.nombre_usuario.data = usuario.nombre_usuario
     form.correo.data = usuario.correo
     
-    return render_template("perfil.html", usuario=usuario, form=form)
+    return render_template("editar_perfil.html", usuario=usuario, form=form)
 
 # Ruta de logout
 @usuario_bp.route("/logout")

@@ -53,3 +53,14 @@ function ValidaFormularioRegistro() {
 function eliminarUsuario() {
     return confirm('¿Estás seguro de que quieres eliminar tu perfil? Esta acción es irreversible.');
 }
+
+setTimeout(() => {
+  const flashContainer = document.getElementById("flash-container");
+  if (flashContainer) {
+    flashContainer.style.transition = "opacity 0.5s ease";
+    flashContainer.style.opacity = "0";
+
+    // 5 segundos
+    setTimeout(() => flashContainer.remove(), 500);
+  }
+}, 3000);
