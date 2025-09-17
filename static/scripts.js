@@ -49,3 +49,7 @@ function ValidaFormularioRegistro() {
     }
     return true;
 }
+
+function eliminarUsuario() {
+    return confirm('¿Estás seguro de que quieres eliminar tu perfil? Esta acción es irreversible.');
+}

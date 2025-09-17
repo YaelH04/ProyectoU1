@@ -10,7 +10,12 @@ class Usuario(db.Model):
     correo = db.Column("email", db.String(120), nullable=False, unique=True)
     contraseña_hash = db.Column("password", db.String(128), nullable=False)
 
-    tareas = db.relationship("Tarea", backref="propietario", lazy=True)
+    tareas = db.relationship(
+        "Tarea", 
+        backref="propietario", 
+        lazy=True, 
+        cascade="all, delete-orphan"
+    )
 
     def set_contraseña(self, contraseña):
         self.contraseña_hash = generate_password_hash(contraseña)

@@ -5,13 +5,13 @@
 <div class="contenedor">
     <h2>Lista de Tareas</h2>
 
-    <a href="{{ url_for('tarea.agregar_tarea') }}">+ Agregar tarea</a>
+    <a href="{{ url_for('tarea.agregar_tarea') }}">+ Agregar Tarea</a>
     <br><br>
 
     {% for tarea in tareas %}
     <div class="tarea">
         <strong>{{ tarea.titulo|capitalize }}</strong>
-        {% if tarea.estado %}✅{% else %}⚠️{% endif %}
+        {% if tarea.estado %}✅completada{% else %}⚠️pendiente{% endif %}
         <p>{{ tarea.descripcion|default("Sin descripción") }}</p>
         <a href="{{ url_for('tarea.editar_tarea', id=tarea.id) }}">Editar</a>
         <form class="form_eliminar" action="{{ url_for('tarea.eliminar_tarea', id=tarea.id) }}" method="POST">

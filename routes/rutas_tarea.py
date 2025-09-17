@@ -20,7 +20,7 @@ def agregar_tarea():
         nueva_tarea = Tarea(titulo=titulo, descripcion=descripcion, id_usuario=session["id_usuario"])
         db.session.add(nueva_tarea)
         db.session.commit()
-        flash("Tarea agregada", "success")
+        flash("ℹ️Tarea agregada", "success")
         return redirect(url_for("tarea.lista_tareas"))
     return render_template("agregar_tarea.html")
 
@@ -37,7 +37,7 @@ def editar_tarea(id):
         tarea.descripcion = request.form["descripcion"]
         tarea.estado = "estado" in request.form
         db.session.commit()
-        flash("Tarea actualizada", "success")
+        flash("ℹ️Tarea actualizada", "success")
         return redirect(url_for("tarea.lista_tareas"))
 
     return render_template("editar_tarea.html", tarea=tarea)
@@ -51,5 +51,5 @@ def eliminar_tarea(id):
         return redirect(url_for("tarea.lista_tareas"))
     db.session.delete(tarea)
     db.session.commit()
-    flash("Tarea eliminada", "success")
+    flash("⚠️Tarea eliminada", "success")
     return redirect(url_for("tarea.lista_tareas"))

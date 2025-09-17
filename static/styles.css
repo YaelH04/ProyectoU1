@@ -40,6 +40,20 @@ form {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.0);
 }
 
+#form-perf-del {
+    background: transparent;
+    box-shadow: none;
+}
+
+.btn-elim-perf {
+    background-color: red;
+    color: #fff;
+}
+
+.btn-elim-perf:hover {
+    background-color: #d32f2f;
+}
+
 input, textarea, button {
     width: 95%;
     margin-top: 10px;
@@ -92,6 +106,16 @@ nav a.active {
 nav span {
     color: rgb(34, 181, 15);
     font-weight: bold;
+}
+
+.btn-perf {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+.btn-perf:hover {
+    cursor: pointer;
+    background-color: #45a049;
 }
 
 .tarea {

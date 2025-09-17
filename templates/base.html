@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Mini To-Do{% endblock %}</title>
+    <title>{% block title %}Lista Tareas{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <script src="{{ url_for('static', filename='scripts.js') }}"></script>
 </head>
@@ -10,7 +10,7 @@
     <nav>
         <a href="{{ url_for('tarea.lista_tareas') }}">Inicio</a> |
         {% if session.get('id_usuario') %}
-            <span>{{ session.nombre_usuario }}</span> |
+            <a style="color: rgb(40, 162, 40);" href="{{ url_for('usuario.perfil', id=session.get('id_usuario')) }}">{{ session.nombre_usuario }}</a> |
             <a href="{{ url_for('usuario.logout') }}">Cerrar Sesión</a>
         {% else %}
             <a href="{{ url_for('usuario.registro') }}">Registro</a> |
