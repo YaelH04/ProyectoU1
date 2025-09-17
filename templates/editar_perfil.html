@@ -41,7 +41,7 @@
         <p style="text-align: center;">Esta acción es permanente y eliminará tu cuenta.</p>
         
         <form id="form-perf-del" method="POST" action="{{ url_for('usuario.delete_perfil', id=usuario.id) }}" 
-              onsubmit="eliminarUsuario()">
+              onsubmit="return eliminarUsuario()">
             
             <button type="submit" class="btn-elim-perf">Eliminar mi Perfil</button>
         
